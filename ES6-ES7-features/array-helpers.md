@@ -1,6 +1,6 @@
 # Array Helpers
 
-### forEach
+## forEach
 We are pass items in to the Iterator function one by one
 ```javascript
 let array = [1, 2, 3];
@@ -18,7 +18,7 @@ function log(item){
 array.forEach(log);
 ```
 
-### map
+## map
 We are not making changes in the original array, we are creating new one and pass returned parameters
 ```javascript
 let array = [1, 2, 3];
@@ -29,7 +29,7 @@ let doubled = array.map(function(item){
 console.log(doubled);  // [2, 4, 6]
 ```
 
-### filter
+## filter
 filter returns new array
 ```javascript
 let array = [1, 2, 3, 4, 5];
@@ -40,7 +40,7 @@ let filtredArray = array.filter(function(item){
 console.log(filtredArray);  // [4, 5]
 ```
 
-### find
+## find
 Find and return only first coincidence
 ```javascript
 let users = [
@@ -57,7 +57,7 @@ let findUser = users.find(function(user){
 console.log(findUser); // will return object with id: 4
 ```
 
-### every & some
+## every & some
 Returns boolean value
 && - and
 || - or
@@ -79,8 +79,8 @@ let computerSome = computers.some(function(computer){
 console.log(computerSome); //true, because atleast 1 computer has more than 8
 ```
 
-### reduce
-##### Reduces array to one element. 
+## reduce
+#### Reduces array to one element. 
 On first iteration it takes init value 0 and add first element '10'. On second iteration we have 10 value + 20. And then 30 + 30. Summ is 60
 ```javascript
 let numbers = [10, 20, 30];

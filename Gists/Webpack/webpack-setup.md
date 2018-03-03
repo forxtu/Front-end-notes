@@ -1,24 +1,33 @@
 # Webpack
 
-How to setup webpack in the project:
-
-- npm init -y *//create package.json*
-- npm install webpack webpack-dev-server webpack-cli --save-dev
+## How to setup webpack in the project:
+- npm init -y
+- npm install webpack webpack-dev-server@latest webpack-cli --save-dev
 - npm install babel-loader babel-core babel-preset-env --save-dev
-- npm install css-loader style-loader --save-dev
-- npm install sass-loader node-sass --save-dev
+- npm install sass-loader node-sass css-loader style-loader --save-dev
+
+- npm install html-loader html-webpack-plugin file-loader --save-dev
+
+- npm install --save-dev extract-text-webpack-plugin  *// not working for webpack > 4 yet*
 
 - create `webpack.config.js`
-Babel, scss. All complies into 1 bundle.js file.
-Source map for styles - display .scss path in the dev tools
+
+## Description:
+- babel, scss - complies into `bundle.js`
+- creates `img` folder with images inside 'dist' folder
+- creates `.html` file in the dist folder and connects `bundle.js` to it
+
+## webpack.config.js
 ```js
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    entry: ['./js/main.js', './scss/main.scss'],
+    entry: './src/js/main.js',
     output: {
-        path: __dirname + "/dist",
-        filename: './bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
-    watch: true,
     devtool: "source-map",
     module: {
         rules: [
@@ -45,10 +54,38 @@ module.exports = {
                         presets: ['env']
                     }
                 }
+            },
+            {
+                test: /\.(html)$/,
+                use: [{
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true,
+                        removeComments: false,
+                        collapseWhitespace: false
+                    }
+                }],
+            },
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img/',
+                            publicPath: 'img/'
+                        }
+                    }
+                ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html'
+        })
+    ]
 };
 ```
-- import bundle.js file into 'index'
-- create .js and .scss files and code!

@@ -8,10 +8,10 @@
 
 - npm install html-loader html-webpack-plugin file-loader --save-dev
 
-*//to use jQuery*
-npm install jquery --save
-In `main.js` add `import 'jquery';`
-Add additiona options to `webpack.config.js`
+>to use jQuery
+- npm install jquery --save
+- In `main.js` add `import 'jquery';`
+- Add additional options to `webpack.config.js`
 
 - npm install --save-dev extract-text-webpack-plugin  *// not working for webpack > 4 yet*
 

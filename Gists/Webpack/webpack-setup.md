@@ -8,6 +8,11 @@
 
 - npm install html-loader html-webpack-plugin file-loader --save-dev
 
+*//to use jQuery*
+npm install jquery --save
+In `main.js` add `import 'jquery';`
+Add additiona options to `webpack.config.js`
+
 - npm install --save-dev extract-text-webpack-plugin  *// not working for webpack > 4 yet*
 
 - create `webpack.config.js`
@@ -20,6 +25,7 @@
 ## webpack.config.js
 ```js
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -85,6 +91,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.html'
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         })
     ]
 };

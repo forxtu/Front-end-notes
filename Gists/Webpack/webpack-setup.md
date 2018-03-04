@@ -13,9 +13,11 @@
 - In `main.js` add `import 'jquery';`
 - Add additional options to `webpack.config.js`
 
-- npm install --save-dev extract-text-webpack-plugin  *// not working for webpack > 4 yet*
+>to transpile .css into another file, but plugin isn't working correctly with webpack >=4
+- npm install --save-dev extract-text-webpack-plugin
 
-- create `webpack.config.js`
+>final step
+- create `webpack.config.js` and fill it
 
 ## Description:
 - babel, scss - complies into `bundle.js`

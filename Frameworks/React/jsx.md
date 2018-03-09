@@ -16,12 +16,12 @@ const whatWantToRender = (
 ReactDOM.render(whatWantToRender, document.getElementById('whereToPut'));
 ```
 
-### In HTML tags which are single like `<br>`, `<img>` in JSX has to be with closed slash - `<br />, <img />`
+>In HTML tags which are single like `<br>`, `<img>` in JSX has to be with closed slash - `<br />, <img />`
 
 ## To create events on elements we should use camelCase of event name
 ```js
 function myFunc(){
-    console.log('myFunc);
+    console.log('myFunc');
 }
 // should use 'onClick, onMouseOver' etc
 const someElements = (
@@ -59,7 +59,7 @@ if (user.age >= drinkingAge) {
 } else {
   message = (
     <h1>
-      Hey, check out these earrings I got at Claire's!
+      Hey, check out these earrings I got at Claires!
     </h1>
   );
 }

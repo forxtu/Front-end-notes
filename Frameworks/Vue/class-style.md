@@ -7,7 +7,7 @@ data: {
 }
 // bind class or style
 <div v-bind:class="{active: isActive}"
-     @click="isActive = !isActive></div>
+     @click="isActive = !isActive"></div>
 // bind multiple classes
 <div :class="[red, {blue: isActive}]">
 // Short form of `v-bind` is `:`

@@ -109,3 +109,30 @@ class Person {
 let den = new Person('Den', 'M');
 console.log(den.greet()); // Den M
 ```
+
+## defineProperty()
+Allows to set and defind properties for the object
+```js
+var account = {
+    cash: 12000,
+    _name: 'Default',
+    withdraw: function(amount) {
+        this.cash -= amount;
+    }
+}
+Object.definePropery(account, 'name', {
+    value: 'ID000-1',
+    writable: true // by default it's read only
+    enumarable: true //
+    // we can set getters and setters
+    get: function() {
+        return this._name;
+    },
+    set: function(name) {
+        this._name = name;
+    }
+});
+console.log(account.name) // 'ID000-1'
+account.name = 'ID000-3';
+console.log(account.name) // 'ID000-1' if we won't set writable to true
+```

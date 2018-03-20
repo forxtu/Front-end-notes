@@ -7,15 +7,6 @@
 - npm install
 - npm run dev 
 
-## Basic directives
-Examples
-```js
-<span>{{msg}}</span> // interpolation
-<span v-text="msg"></span>
-<span v-html="msg"></span>
-<span v-once>{{msg}}</span> // one time interpolation
-```
-
 ## Instance Lifecycle
 Whole life cycle
 ```js

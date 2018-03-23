@@ -87,3 +87,38 @@ new Vue({
     }
 })
 ```
+
+## Select check if open
+
+```js
+<div :class="{'v-input__select--is-open': selectToggleState}">
+    <select 
+        @blur="setSelectFalse" 
+        @click="toggleSelect"
+        >
+
+    <span class="v-input__select__icon">
+        <i class="fa fa-angle-down"></i>
+    </span>
+</div>
+
+// script
+export default {
+  data () {
+    return {
+      selectToggleState: false
+    }
+  },
+  methods: {
+    toggleSelect () {
+      return this.selectToggleState ? this.setSelectFalse.bind(this)() : this.setSelectTrue.bind(this)();
+    },
+    setSelectTrue() {
+      return this.selectToggleState = true;
+    },
+    setSelectFalse() {
+      return this.selectToggleState = false;
+    },
+  }
+}
+```

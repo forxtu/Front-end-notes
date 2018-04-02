@@ -8,7 +8,7 @@ var Obj = function() {
     
     this.add = function(i) {
         this.i += i;
-        return this; // to get object instead if 'undefined'
+        return this; // to get an object instead of 'undefined'
     }
     
     this.substract = function(i) {

@@ -110,8 +110,18 @@ let den = new Person('Den', 'M');
 console.log(den.greet()); // Den M
 ```
 
-## defineProperty()
-Allows to set and defind properties for the object
+## Define property
+Allows to set and define properties for the object
+
+`Object.defineProperty(obj, prop, descriptor)`
+
+**Parameters**
+- obj - The object on which to define the property.
+- prop - The name of the property to be defined or modified.
+- descriptor - The descriptor for the property being defined or modified.
+
+**Return value**
+- The object that was passed to the function.
 ```js
 var account = {
     cash: 12000,

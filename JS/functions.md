@@ -83,3 +83,22 @@ tellMeWhenDone(function() {
 });
 // 5, 'done'
 ```
+
+## Recursion
+Function which returns itself
+```js
+let add = function(n) {
+  if(n < 0){
+    return 0;
+  } else {
+    return n + add(n - 1);
+  }
+}
+
+console.log(add(3)); // 6
+// mechanism
+add(3) => 3 + add(2);
+          3 + 2 + add(1);
+          3 + 2 + 1 + add(0);
+          3 + 2 + 1 + 0 = 6
+```

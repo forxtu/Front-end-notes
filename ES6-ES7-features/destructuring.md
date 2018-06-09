@@ -90,3 +90,20 @@ var user = {
 }
 signUp(user);
 ```
+
+## Another example
+
+```js
+let user = {
+    firstName: 'myname',
+    lastName: 'mylastname',
+    social: {
+        facebook: 'forxtu'
+    }
+}
+// 'firstName: name' - change name of the variable
+// social: {facebook} - take internal property ': fb' and change variable to 'fb'
+let {firstName: name, lastName, social: { facebook: fb }} = user;
+
+console.log(name, lastName, fb);
+```

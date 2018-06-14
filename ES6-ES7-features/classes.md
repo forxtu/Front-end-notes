@@ -33,3 +33,45 @@ civic.title; // civic - extended from Car
 civic.color; // black
 civic.honk(); // 'beep' and then 'beep from honda'
 ```
+
+
+## Static methods
+Use for an utilities functions. Those methods are not going into prototype
+```js
+class Car{
+    constructor(color, price){
+        this.color = color;
+        this.price = price;
+    }
+
+    static comparePrices(car1, car2) {
+        return Math.abs(car1.price - car2.price)
+    }
+}
+
+let redCar = new Car('red', 100);
+let blueCar = new Car('blue', 150);
+
+console.log(Car.comparePrices(redCar, blueCar)); // 50
+```
+
+## Object assign to not use a lot of this in constructor
+
+```js
+class A {
+    constructor(a,b,c,d,e) {
+        Object.assign(this, {a,b,c,d,e});
+    }
+}
+
+class B extends A {
+    constructor(f, ...args) {
+        super(...args);
+        this.f = f;
+    }
+}
+
+let b = new B('f in child','a','b','c','d', 'e');
+
+console.log(b); // 'f in child' , 'a', 'b', 'c', 'd', 'e'
+```

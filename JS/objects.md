@@ -146,3 +146,40 @@ console.log(account.name) // 'ID000-1'
 account.name = 'ID000-3';
 console.log(account.name) // 'ID000-1' if we won't set writable to true
 ```
+
+## Object.keys & values
+Returns an array of keys from object
+
+```js
+var obj = {
+    name: 'Den',
+    age: 24
+}
+
+console.log(Object.keys(obj)); // [name, age]
+console.log(Object.values(obj)); // ['Den', 24]
+// and then we can use .map to iterate through them
+
+
+/* to count how much elements in object (burger reac app #udemy) transform a string to as many elements which we have in value */
+var ingredients = {
+    meat: 2,
+    salad: 1,
+    cheese: 2
+};
+Object.keys(ingredients).map((ingredientKey) => {
+    return [...Array(ingredients[ingredientKey])].map((_, index) => {
+       console.log(`${ingredientKey} - ${index}`); 
+    });
+});
+/* output
+"meat"
+"meat - 0"
+"meat - 1"
+"salad"
+"salad - 0"
+"cheese"
+"cheese - 0"
+"cheese - 1"
+*/
+```

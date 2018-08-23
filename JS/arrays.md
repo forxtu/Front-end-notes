@@ -29,7 +29,11 @@ let arg = function(firstname, lastname) {
   /* convert arguments from an Array-like object to the normal Array */
 
   // let args = Array.prototype.slice.call(arguments);
-  let args = Array.from(arguments); //ES2015
+  // var args = (arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments));
+
+  // ES2015
+  // let args = Array.from(arguments);
+  let args = [...arguments];
 
   args.map(item => {
     console.log(item);

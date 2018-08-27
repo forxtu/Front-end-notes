@@ -1,5 +1,7 @@
 ## Closures
 
+**Functions with preserved data**
+
 ```js
 function greet(whatToSay) {
   return function(name) {

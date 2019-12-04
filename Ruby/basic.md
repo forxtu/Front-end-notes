@@ -32,12 +32,12 @@ puts "Your name is " + name
 ## Casting and Converting
 
 ```ruby
-puts  3.14.to_i
-puts  3.to_f
+puts 3.14.to_i
+puts 3.to_f
 puts "3.0".to_s
 
 puts 100 + "50".to_i
-puts  100 + "50.99".to_f
+puts 100 + "50.99".to_f
 ```
 
 ## Strings
@@ -53,11 +53,11 @@ puts greeting[1,3]
 
 ## Numbers
 ```ruby
-puts  2 * 3         # Basic Arithmetic: +, -, /, *
-puts  2**3          # Exponent
-puts  10 % 3        # Modulus Op. : returns remainder of 10/3
-puts  1 + 2 * 3     # order of operations
-puts 10 / 3.0       # int's and doubles
+puts 2 * 3         # Basic Arithmetic: +, -, /, *
+puts 2**3          # Exponent
+puts 10 % 3        # Modulus Op. : returns remainder of 10/3
+puts 1 + 2 * 3     # order of operations
+puts 10 / 3.0      # int's and doubles
 
 
 num = 10
